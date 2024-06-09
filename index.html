@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulation de Production</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-4 text-center">
+    <div class="p-3">
+        <a href="?state=cout_production" class="btn btn-primary">Coûts de Production</a>
+        <a href="?state=delai_fabrication" class="btn btn-primary">Délais de Fabrication</a>
+        <a href="?state=taux_defaut" class="btn btn-primary">Taux de Défauts</a>
+    </div>
+    <form action="/" method="post">
+    {% if state == 'cout_production' %}
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+            <tr>
+                <th>Année</th>
+                <th>Modèle</th>
+                <th>Coût des Matériaux (par véhicule)</th>
+                <th>Coût de la Main-d'œuvre (par véhicule)</th>
+                <th>Coût de l'Énergie (par véhicule)</th>
+                <th>Coût de Maintenance (par véhicule)</th>
+                <th>Coût Total (par véhicule)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="number" class="form-control" value="2020"></td>
+                <td><input type="text" class="form-control" value="Électro 1"></td>
+                <td><input type="number" class="form-control" value="12000"></td>
+                <td><input type="number" class="form-control" value="6000"></td>
+                <td><input type="number" class="form-control" value="1000"></td>
+                <td><input type="number" class="form-control" value="800"></td>
+                <td><input type="number" class="form-control" value="19800"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="form-control" value="2021"></td>
+                <td><input type="text" class="form-control" value="Électro 2"></td>
+                <td><input type="number" class="form-control" value="13000"></td>
+                <td><input type="number" class="form-control" value="6500"></td>
+                <td><input type="number" class="form-control" value="1200"></td>
+                <td><input type="number" class="form-control" value="900"></td>
+                <td><input type="number" class="form-control" value="21600"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="form-control" value="2022"></td>
+                <td><input type="text" class="form-control" value="Électro 3"></td>
+                <td><input type="number" class="form-control" value="14000"></td>
+                <td><input type="number" class="form-control" value="7000"></td>
+                <td><input type="number" class="form-control" value="1300"></td>
+                <td><input type="number" class="form-control" value="1000"></td>
+                <td><input type="number" class="form-control" value="23300"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="form-control" value="2023"></td>
+                <td><input type="text" class="form-control" value="Électro 4"></td>
+                <td><input type="number" class="form-control" value="15000"></td>
+                <td><input type="number" class="form-control" value="7500"></td>
+                <td><input type="number" class="form-control" value="1400"></td>
+                <td><input type="number" class="form-control" value="1100"></td>
+                <td><input type="number" class="form-control" value="25000"></td>
+            </tr>
+            </tbody>
+        </table>
+        {% elif state == 'delai_fabrication' %}
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+            <tr>
+                <th>Année</th>
+                <th>Modèle</th>
+                <th>Temps d'Assemblage Batteries (jours)</th>
+                <th>Temps de Montage Moteur (jours)</th>
+                <th>Temps de Carrosserie (jours)</th>
+                <th>Temps d'Attente (jours)</th>
+                <th>Temps Total (jours)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="number" class="form-control" value="2020"></td>
+                <td><input type="text" class="form-control" value="Électro 1"></td>
+                <td><input type="number" class="form-control" value="2"></td>
+                <td><input type="number" class="form-control" value="1"></td>
+                <td><input type="number" class="form-control" value="2"></td>
+                <td><input type="number" class="form-control" value="1"></td>
+                <td><input type="number" class="form-control" value="6"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="form-control" value="2021"></td>
+                <td><input type="text" class="form-control" value="Électro 2"></td>
+                <td><input type="number" class="form-control" value="2.5"></td>
+                <td><input type="number" class="form-control" value="1.5"></td>
+                <td><input type="number" class="form-control" value="2.5"></td>
+                <td><input type="number" class="form-control" value="1.5"></td>
+                <td><input type="number" class="form-control" value="7.5"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="form-control" value="2022"></td>
+                <td><input type="text" class="form-control" value="Électro 3"></td>
+                <td><input type="number" class="form-control" value="3"></td>
+                <td><input type="number" class="form-control" value="2"></td>
+                <td><input type="number" class="form-control" value="3"></td>
+                <td><input type="number" class="form-control" value="2"></td>
+                <td><input type="number" class="form-control" value="10"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="form-control" value="2023"></td>
+                <td><input type="text" class="form-control" value="Électro 4"></td>
+                <td><input type="number" class="form-control" value="3.5"></td>
+                <td><input type="number" class="form-control" value="2.5"></td>
+                <td><input type="number" class="form-control" value="3.5"></td>
+                <td><input type="number" class="form-control" value="2.5"></td>
+                <td><input type="number" class="form-control" value="12"></td>
+            </tr>
+            </tbody>
+        </table>
+        {% else %}
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+            <tr>
+                <th>Année</th>
+                <th>Modèle</th>
+                <th>Taux de Défauts (%)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="number" class="form-control" value="2020"></td>
+                <td><input type="text" class="form-control" value="Électro 1"></td>
+                <td><input type="number" class="form-control" value="3.0"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="form-control" value="2021"></td>
+                <td><input type="text" class="form-control" value="Électro 2"></td>
+                <td><input type="number" class="form-control" value="2.8"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="form-control" value="2022"></td>
+                <td><input type="text" class="form-control" value="Électro 3"></td>
+                <td><input type="number" class="form-control" value="2.5"></td>
+            </tr>
+            <tr>
+            <td><input type="number" class="form-control" value="2023"></td>
+            <td><input type="text" class="form-control" value="Électro 4"></td>
+            <td><input type="number" class="form-control" value="2.3"></td>
+            </tr>
+            </tbody>
+        </table>
+        {% endif %}
+        <input class="btn btn-primary text-center" type="submit" value="Générer">
+    </form>
+</div>
+
+<div id="graph" class="text-center my-4">
+    {% if state == 'cout_production' %}
+    <img src="{{ url_for('static', filename='distribution_costs.png') }}" class="img-fluid" />
+    {% elif state == 'delai_fabrication' %}
+    <img src="{{ url_for('static', filename='distribution_times.png') }}" class="img-fluid" />
+    {% else  %}
+    <img src="{{ url_for('static', filename='distribution_defects.png') }}" class="img-fluid" />
+    {% endif %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        if (window.location.hash === '#graph') {
+            document.getElementById('graph').scrollIntoView();
+        }
+    });
+</script>
+</body>
+</html>
